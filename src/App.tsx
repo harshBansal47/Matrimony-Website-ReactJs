@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// Import components for routes
+import Home from './components/Home';
+import Contact from './components/Contact';
+import About from './components/About';
+import Blog from './components/Blog'; // Import BlogList component
+import Root from './components/Root';
+import ErrorPage from './components/ErrorPage';
+
+// Define your router configuration
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />, // Define ErrorPage component
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "blogs",
+        element: <Blog />, // Render BlogList component here
+      },
+    ],
+  },
+]);
+
+
+// App component renders RouterProvider with defined router
+const App = () => (
+  <RouterProvider router={router} />
+);
 
 export default App;
