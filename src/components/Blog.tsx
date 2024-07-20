@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { Link } from "react-router-dom";
-import placeholderImage from "../images/blog.webp"; // Replace with correct path to your placeholder image
+import placeholderImage from "../images/blog.jpg"; // Replace with correct path to your placeholder image
 import { FaPlus } from "react-icons/fa";
 
 interface Blog {

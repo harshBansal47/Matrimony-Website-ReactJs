@@ -128,7 +128,7 @@ export default function ContactUs() {
                     <div className="w-full flex flex-col gap-4 z-10">
                         <h2 className="text-4xl font-bold mb-6 text-center text-gray-600 px-10">We've been waiting for you.</h2>
                         <p className="text-center mb-6 text-gray-600 px-10">We want to hear from you. Let us know how we can help.</p>
-                        <div className="w-full flex flex-col items-center gap-5 relative rounded pb-8">
+                        <div className="w-full flex flex-col items-center gap-5 relative rounded pb-8 overflow-hidden">
                             <div className="absolute -top-20 opacity-70 -z-10">
                                 <svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
                                     <g transform="translate(300,300)">

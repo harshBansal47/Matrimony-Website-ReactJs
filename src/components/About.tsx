@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'react-bootstrap/Image';
 import MiiscoImage from '../images/matchmaking.webp'; // Replace with correct path
-
 import { FaLinkedinIn } from 'react-icons/fa';
 import teams from '../utilities/team'; // Replace with correct path
 import { SiMarriott } from 'react-icons/si';
+import { motion, useAnimation, Variants } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-const AboutUs = () => {
+interface TeamMember {
+  name: string;
+  position: string;
+  imageUrl: string;
+  linkedin: string;
+}
+
+interface Points {
+  title: string;
+  description: string;
+}
+
+const AboutUs: React.FC = () => {
   const [hoveredPoint, setHoveredPoint] = useState<number>(0);
 
-  const points = [
+  const points: Points[] = [
     {
       title: 'Community-Centric',
       description:
@@ -37,100 +50,127 @@ const AboutUs = () => {
     },
   ];
 
+  const { ref: bannerRef, inView: bannerInView } = useInView({ triggerOnce: true });
+  const { ref: ourStoryRef, inView: ourStoryInView } = useInView({ triggerOnce: true });
+  const { ref: whyUsRef, inView: whyUsInView } = useInView({ triggerOnce: true });
+  const { ref: teamRef, inView: teamInView } = useInView({ triggerOnce: true });
+  const { ref: valuesRef, inView: valuesInView } = useInView({ triggerOnce: true });
+  const { ref: missionRef, inView: missionInView } = useInView({ triggerOnce: true });
+  const { ref: visionRef, inView: visionInView } = useInView({ triggerOnce: true });
+  const { ref: joinUsRef, inView: joinUsInView } = useInView({ triggerOnce: true });
+
+  const bannerAnimation = useAnimation();
+  const ourStoryAnimation = useAnimation();
+  const whyUsAnimation = useAnimation();
+  const teamAnimation = useAnimation();
+  const valuesAnimation = useAnimation();
+  const missionAnimation = useAnimation();
+  const visionAnimation = useAnimation();
+  const joinUsAnimation = useAnimation();
+  useEffect(() => {
+    if (bannerInView) bannerAnimation.start({ opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6 } });
+    if (ourStoryInView) ourStoryAnimation.start({ opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.6 } });
+    if (whyUsInView) whyUsAnimation.start({ opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } });
+    if (teamInView) teamAnimation.start({ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.6 } });
+    if (valuesInView) valuesAnimation.start({ opacity: 1, y: 0, transition: { delay: 1.0, duration: 0.6 } });
+    if (missionInView) missionAnimation.start({ opacity: 1, y: 0, transition: { delay: 1, duration: 0.6 } });
+    if (visionInView) visionAnimation.start({ opacity: 1, y: 0, transition: { delay: 1, duration: 0.6 } });
+    if (joinUsInView) joinUsAnimation.start({ opacity: 1, y: 0, transition: { delay: 1, duration: 0.6 } });
+  }, [
+    bannerInView, ourStoryInView, whyUsInView, teamInView, valuesInView, missionInView,
+    visionInView, joinUsInView,
+    bannerAnimation, ourStoryAnimation, whyUsAnimation, teamAnimation, valuesAnimation,
+    missionAnimation, visionAnimation, joinUsAnimation,
+  ]);
+  
+  
+
   return (
     <>
       <div className="flex flex-col justify-center pt-16">
-        <div className="text-center mb-16 banner h-52 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg">
+        <motion.div
+          ref={bannerRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={bannerAnimation}
+          className="text-center mb-16 banner h-52 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg"
+        >
           <h1 className="text-4xl font-bold text-gray-100">About Us</h1>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="flex flex-col items-center mb-16 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 p-10 mx-10 shadow-lg space-y-12">
-  <div className="w-full text-center">
-    {/* <h1 className="text-5xl font-bold text-white mb-6">Welcome to the Smart Maheshwari Matrimonial App</h1> */}
-    <h2 className="font-extrabold text-6xl text-white">Miiscollp</h2>
-  </div>
+      <motion.div
+        ref={ourStoryRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={ourStoryAnimation}
+        className="bg-purple-800 w-11/12 md:w-10/12 lg:w-8/12 mx-auto bg-opacity-20 rounded-lg p-6 mb-8"
+      >
+        <h2 className="text-3xl font-bold text-gray-600">Our Story</h2>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          MisscoLpp was founded with a vision to revolutionize the matrimonial experience for the Maheshwari community. Recognizing the unique needs and values of our community, we set out to create a platform that blends the best of tradition and technology. Our team of dedicated professionals has worked tirelessly to develop an app that not only meets but exceeds your expectations.
+        </p>
+      </motion.div>
 
-
-
-  <div className="w-full px-8 text-center lg:text-left space-y-8">
-    <p className="text-lg text-white leading-relaxed">
-      At Misscollp, we understand that finding a life partner is one of the most significant decisions in life. Our mission is to make this journey as smooth and fulfilling as possible for the Maheshwari community. The Smart Maheshwari Matrimonial App is a pioneering platform designed to bring together tradition and technology, ensuring that every match is meaningful and lasting.
-    </p>
-
-
-    
-  </div>
-</div>
-
-
-<div className="bg-purple-800 w-10/12 mx-auto bg-opacity-20 rounded-lg p-6 mb-8">
-      <h2 className="text-3xl font-bold text-gray-600">Our Story</h2>
-      <p className="text-lg text-gray-600 leading-relaxed">
-        MisscoLpp was founded with a vision to revolutionize the matrimonial experience for the Maheshwari community. Recognizing the unique needs and values of our community, we set out to create a platform that blends the best of tradition and technology. Our team of dedicated professionals has worked tirelessly to develop an app that not only meets but exceeds your expectations.
-      </p>
-    </div>
-
-
-
-    <div className="min-h-screen flex flex-col items-center mb-16 bg-gray-50 p-10 space-y-10">
-      <div className="relative w-full md:w-1/2 flex justify-center p-4">
-        <div className="relative w-80 h-80">
-          {/* Image Container */}
-          <div className="relative w-full h-full rounded-full overflow-hidden shadow-lg">
-            <Image
-              src={MiiscoImage}
-              alt="miisco"
-            
-              className="rounded-full"
-            />
+      <motion.div
+        ref={whyUsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={whyUsAnimation}
+        className="min-h-screen flex flex-col items-center mb-16 bg-gray-50 p-6 md:p-10 space-y-10"
+      >
+        <div className="relative w-full md:w-1/2 flex justify-center p-4">
+          <div className="relative w-60 h-60 md:w-80 md:h-80">
+            <div className="relative w-full h-full rounded-full overflow-hidden shadow-lg">
+              <Image src={MiiscoImage} alt="miisco" className="rounded-full" />
+            </div>
           </div>
-          {/* Points Container */}
-         
         </div>
-      </div>
-      <div className="w-full md:w-1/2 p-4 text-gray-700 ">
-        <h1 className="text-4xl font-bold mb-4 tracking-wide flex items-center space-x-3">
-          <SiMarriott className="w-8 h-8 text-blue-500" />
-          <span>Why Us</span>
-        </h1>
 
-        <div className="relative my-10 flex gap-5 items-center justify-center">
-            {points.map((point, index) => (
-              <div
-                key={index}
-                className={`gap-5 p-4 bg-white rounded shadow-md cursor-pointer transition-transform transform  ${
-                  hoveredPoint === index ? 'scale-110' : ''
-                }`}
-             
-                onMouseEnter={() => setHoveredPoint(index)}
-                onMouseLeave={() => setHoveredPoint(0)}
-              >
-                <span className="text-sm font-semibold">{point.title}</span>
-              </div>
-            ))}
+        <div className="w-full md:w-2/3 lg:w-1/2 p-4 text-gray-700">
+          <h1 className="text-4xl font-bold mb-4 tracking-wide flex items-center space-x-3">
+            <SiMarriott className="w-8 h-8 text-blue-500" />
+            <span>Why Us</span>
+          </h1>
+          <div className="flex flex-col md:flex-row justify-between mx-4 md:mx-10 my-10 space-y-5 md:space-y-0">
+            <div className="relative flex flex-col justify-between space-y-4 md:space-y-0 md:mr-10">
+              {points.map((point, index) => (
+                <div
+                  key={index}
+                  className={`p-4 bg-white rounded-lg shadow-lg cursor-pointer transition-transform transform ${
+                    hoveredPoint === index ? 'scale-105 bg-blue-100' : 'bg-white'
+                  } hover:shadow-xl`}
+                  onMouseEnter={() => setHoveredPoint(index)}
+                  onClick={() => setHoveredPoint(index)}
+                  onMouseLeave={() => setHoveredPoint(0)}
+                >
+                  <span className="text-sm font-semibold text-gray-800">{point.title}</span>
+                </div>
+              ))}
+            </div>
+
+            <ul className="space-y-5 text-lg leading-relaxed mt-5 md:mt-0 w-full">
+              {points.map((point, index) => (
+                <li
+                  key={index}
+                  className={`flex items-start space-x-3 transition-opacity ${
+                    hoveredPoint === index ? 'opacity-100' : 'opacity-70'
+                  } md:${hoveredPoint === index ? 'block' : 'hidden'} block md:flex`}
+                >
+                  <span className="text-blue-500 font-semibold">•</span>
+                  <span>
+                    <strong className="text-gray-900">{point.title}:</strong> {point.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
+      </motion.div>
 
-        <ul className="space-y-5 text-lg leading-relaxed">
-          {points.map((point, index) => (
-            <li
-              key={index}
-              className={`flex items-start space-x-3 transition-opacity ${
-                hoveredPoint === index ? 'opacity-100' : 'opacity-50'
-              }`}
-            >
-              <span className="text-blue-500 font-semibold">•</span>
-              <span>
-                <strong>{point.title}:</strong> {point.description}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-
-      <div className="text-center mb-16 flex flex-col justify-center items-center">
+      <motion.div
+        ref={teamRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={teamAnimation}
+        className="container mx-auto p-4 mb-16"
+      >
         <h1 className="text-4xl font-bold mb-8 text-gray-800">Our Team</h1>
         <hr className="w-1/2 border-t-4 border-gray-300 mb-8" />
         <div className="flex flex-wrap justify-center">
@@ -159,9 +199,14 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col items-center mb-16 rounded-xl bg-gradient-to-r from-gray-800 to-teal-600 p-10 mx-10 shadow-lg">
+      <motion.div
+        ref={valuesRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={valuesAnimation}
+        className="flex flex-col items-center mb-16 rounded-xl bg-gradient-to-r from-gray-500 to-teal-400 p-10 mx-4 md:mx-10 shadow-lg"
+      >
         <h1 className="text-4xl font-bold text-white mb-6">Our Values</h1>
         <div className="w-full flex flex-wrap justify-center">
           <div className="w-full md:w-1/3 p-4">
@@ -189,34 +234,52 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="bg-gradient-to-r w-10/12 mx-auto from-blue-500 to-purple-600 rounded-lg p-6 mb-8 shadow-lg">
-  <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
-  <p className="text-lg text-white leading-relaxed">
-    To connect Maheshwari singles worldwide by providing a reliable, secure, and user-friendly platform that fosters meaningful relationships and lifelong partnerships.
-  </p>
-</div>
+      <motion.div
+        ref={missionRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={missionAnimation}
+        className="container mx-auto p-4"
+      >
+        <div className="bg-gradient-to-r w-full md:w-9/12 lg:w-7/12 mx-auto from-fuchsia-200 to-purple-200 rounded-lg p-6 mb-8 shadow-lg overflow-hidden">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
+          <p className="text-lg text-gray-800 leading-relaxed">
+            To connect Maheshwari singles worldwide by providing a reliable, secure, and user-friendly platform that fosters meaningful relationships and lifelong partnerships.
+          </p>
+        </div>
+      </motion.div>
 
+      <motion.div
+        ref={visionRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={visionAnimation}
+        className="container mx-auto p-4"
+      >
+        <div className="bg-gradient-to-r w-full md:w-9/12 lg:w-7/12 mx-auto from-fuchsia-200 to-purple-200 rounded-lg p-6 mb-8 shadow-lg overflow-hidden">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h2>
+          <p className="text-lg text-gray-800 leading-relaxed">
+            To be the most trusted and preferred matrimonial app for the Maheshwari community, known for our commitment to quality, integrity, and innovation.
+          </p>
+        </div>
+      </motion.div>
 
-      <div className="bg-gradient-to-r w-10/12 mx-auto from-green-400 to-blue-500 rounded-lg p-6 mb-8 shadow-lg">
-  <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
-  <p className="text-lg text-white leading-relaxed">
-    To be the most trusted and preferred matrimonial app for the Maheshwari community, known for our commitment to quality, integrity, and innovation.
-  </p>
-</div>
-
-
-      <div className="bg-gradient-to-r w-10/12 mx-auto from-pink-500 to-orange-500 rounded-lg p-6 mb-8 shadow-lg">
-  <h2 className="text-3xl font-bold text-white mb-4">Join Us on This Journey</h2>
-  <p className="text-lg text-white leading-relaxed mb-4">
-    We invite you to be a part of this exciting journey. Create your profile today and let the Smart Maheshwari Matrimonial App help you find your perfect match. Together, we can make your dream of finding a life partner a reality.
-  </p>
-  <p className="text-lg text-white leading-relaxed">
-    For more information and updates, follow us on our social media channels and stay connected with MisscoLpp.
-  </p>
-</div>
-
+      <motion.div
+        ref={joinUsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={joinUsAnimation}
+        className="container mx-auto p-4"
+      >
+        <div className="bg-gradient-to-r w-full md:w-9/12 lg:w-7/12 mx-auto from-fuchsia-200 to-purple-200 rounded-lg p-6 mb-8 shadow-lg overflow-hidden">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Join Us on This Journey</h2>
+          <p className="text-lg text-gray-800 leading-relaxed mb-4">
+            We invite you to be a part of this exciting journey. Create your profile today and let the Smart Maheshwari Matrimonial App help you find your perfect match. Together, we can make your dream of finding a life partner a reality.
+          </p>
+          <p className="text-lg text-gray-800 leading-relaxed">
+            For more information and updates, follow us on our social media channels and stay connected with MisscoLpp.
+          </p>
+        </div>
+      </motion.div>
     </>
   );
 };

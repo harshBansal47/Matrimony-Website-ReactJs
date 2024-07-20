@@ -9,13 +9,13 @@ import About from './components/About';
 import Blog from './components/Blog'; // Import BlogList component
 import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
+import BlogPost from './components/BlogPost'; // Import the new BlogPost component
 
-// Define your router configuration
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />, // Define ErrorPage component
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -33,9 +33,14 @@ const router = createBrowserRouter([
         path: "blogs",
         element: <Blog />, // Render BlogList component here
       },
+      {
+        path: "blogs/:slug",
+        element: <BlogPost />, // Render BlogPost component here
+      },
     ],
   },
 ]);
+
 
 
 // App component renders RouterProvider with defined router

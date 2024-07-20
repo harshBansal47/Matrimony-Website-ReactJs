@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiTireIronCross } from "react-icons/gi";
 import Image from "react-bootstrap/Image";
-import Logo from '../images/logo.png';
+import Logo from '../images/logo.jpeg';
 
 export default function Navbar() {
   const [expand, setExpand] = useState(false);
