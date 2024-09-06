@@ -57,7 +57,7 @@ export default function Footer() {
             <li className="mb-2"><a href="/terms/termsandconditions" className="text-sm text-gray-400 hover:text-pink-500">Terms & Conditions</a></li>
             <li className="mb-2"><a href="/terms/privacy" className="text-sm text-gray-400 hover:text-pink-500">Privacy Policy</a></li>
             <li className="mb-2"><a href="/terms/termofuse" className="text-sm text-gray-400 hover:text-pink-500">Terms of Use</a></li>
-            <li className="mb-2"><a href="/terms/help" className="text-sm text-gray-400 hover:text-pink-500">Help & Support</a></li>
+            <li className="mb-2"><a href="/helpAndSupport" className="text-sm text-gray-400 hover:text-pink-500">FAQ's</a></li>
           </ul>
         </motion.div>
       </motion.div>

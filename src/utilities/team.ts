@@ -3,8 +3,8 @@ import founderImage from '../images/team/founder.jpeg';
 import rahulImage from '../images/team/rahul.jpeg';
 import cmoImage from '../images/team/cmo.jpeg';
 import cofounderImage from '../images/team/cofounder.jpeg';
-import marketerImage from '../images/team/marketting.jpeg';
-import dheerajImage from '../images/team/dheeraj.jpeg';
+// import marketerImage from '../images/team/marketting.jpeg';
+// import dheerajImage from '../images/team/dheeraj.jpeg';
 import harshImage from '../images/team/harsh.jpg';
 
 interface Employee {
@@ -52,13 +52,13 @@ const teams: Team[] = [
         linkedin: "https://www.linkedin.com/in/carryadder/",
         imageUrl: carryImage,
       },
-      {
-        name: "Dheeraj Jawar",
-        id: 5,
-        position: "SDET-1",
-        linkedin: "https://www.linkedin.com/in/dhiraj-zawar-19424124a/",
-        imageUrl: dheerajImage,
-      },
+      // {
+      //   name: "Dheeraj Jawar",
+      //   id: 5,
+      //   position: "SDET-1",
+      //   linkedin: "https://www.linkedin.com/in/dhiraj-zawar-19424124a/",
+      //   imageUrl: dheerajImage,
+      // },
       {
         name: "Harsh Bansal",
         id: 6,

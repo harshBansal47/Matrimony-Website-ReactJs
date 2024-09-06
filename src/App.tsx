@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
 // Import components for routes
@@ -10,6 +10,7 @@ import Blog from './components/Blog'; // Import BlogList component
 import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import BlogPost from './components/BlogPost'; // Import the new BlogPost component
+import HelpAndSupport from './components/HelpandSupport';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "blogs/:slug",
         element: <BlogPost />, // Render BlogPost component here
       },
+      {
+        path:"/helpAndSupport",
+        element:<HelpAndSupport/>
+      }
     ],
   },
 ]);

@@ -4,15 +4,15 @@ import MiiscoImage from '../images/matchmaking.webp'; // Replace with correct pa
 import { FaLinkedinIn } from 'react-icons/fa';
 import teams from '../utilities/team'; // Replace with correct path
 import { SiMarriott } from 'react-icons/si';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-interface TeamMember {
-  name: string;
-  position: string;
-  imageUrl: string;
-  linkedin: string;
-}
+// interface TeamMember {
+//   name: string;
+//   position: string;
+//   imageUrl: string;
+//   linkedin: string;
+// }
 
 interface Points {
   title: string;

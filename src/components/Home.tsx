@@ -5,6 +5,16 @@ import DownloadImage from '../images/download.png';
 import IosImage from '../images/ioslog.png';
 import Androidlogo from '../images/androidlogo.png';
 
+import capricorn from '../images/capri.webp';
+import taurus from '../images/taurus.webp';
+import cancer from '../images/cancer.webp';
+import tabBg from '../images/tab-bg.jpg';
+import AiMatches from '../images/screenshots/ai-matches.jpeg';
+import PersonalizedPreferences from '../images/screenshots/v.jpeg';
+import Astro from '../images/screenshots/astro.jpeg';
+import Seamless from '../images/screenshots/seamless.jpeg';
+
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -22,6 +32,8 @@ import image7 from '../images/1720735025419.png';
 import image8 from '../images/1720735025429.png';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Image } from 'react-bootstrap';
+import SiteFeatures from './features';
 
 const images = [
   { src: image4, alt: 'Character Matching' },
@@ -33,6 +45,9 @@ const images = [
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const scroll = window.scrollY;
+
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -103,6 +118,15 @@ const HomePage = () => {
         </motion.div>
       </motion.div>
 
+      <div className="flex flex-col gap-4 justify-center items-center min-h-screen w-screen bg-gradient-to-r from-blue-100 via-purple-200 to-pink-200 relative" style={{ backgroundAttachment: 'fixed' }}>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-40" style={{ backgroundAttachment: 'fixed' }}></div>
+        {SiteFeatures.map(item => (
+          <item.Component key={item.id} />
+        ))}
+      </div>
+
+
       <motion.div
         className="flex flex-col items-center p-6 my-10 bg-gray-100"
         initial={{ opacity: 0 }}
@@ -110,10 +134,13 @@ const HomePage = () => {
         transition={{ duration: 1, delay: 1 }}
       >
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-800">
-            Find Your <span className="text-pink-500">Special</span> Someone
+          <h2 className="text-4xl font-extrabold text-maroon-700 mb-4">
+            Find Your <span className="text-pink-500"> Perfect Match</span> in the Maheshwari Community with <span className='text-emerald-600'>AI Power</span>
           </h2>
+          <h2 className='text-xl text-gray-600 mb-8'> Seamlessly blending tradition with technology to bring you the most compatible match.</h2>
         </div>
+
+
         <div className="grid gap-8 mb-8 md:grid-cols-3">
           {[
             { icon: FaRegIdBadge, title: 'Register', text: 'Sign up for free and create your profile.' },
@@ -139,6 +166,8 @@ const HomePage = () => {
           ))}
         </div>
       </motion.div>
+
+
 
       <motion.div
         className="min-h-screen bg-gray-100 py-12"
