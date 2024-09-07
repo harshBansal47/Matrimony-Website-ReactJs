@@ -5,14 +5,14 @@ import DownloadImage from '../images/download.png';
 import IosImage from '../images/ioslog.png';
 import Androidlogo from '../images/androidlogo.png';
 
-import capricorn from '../images/capri.webp';
-import taurus from '../images/taurus.webp';
-import cancer from '../images/cancer.webp';
-import tabBg from '../images/tab-bg.jpg';
-import AiMatches from '../images/screenshots/ai-matches.jpeg';
-import PersonalizedPreferences from '../images/screenshots/v.jpeg';
-import Astro from '../images/screenshots/astro.jpeg';
-import Seamless from '../images/screenshots/seamless.jpeg';
+// import capricorn from '../images/capri.webp';
+// import taurus from '../images/taurus.webp';
+// import cancer from '../images/cancer.webp';
+// import tabBg from '../images/tab-bg.jpg';
+// import AiMatches from '../images/screenshots/ai-matches.jpeg';
+// import PersonalizedPreferences from '../images/screenshots/v.jpeg';
+// import Astro from '../images/screenshots/astro.jpeg';
+// import Seamless from '../images/screenshots/seamless.jpeg';
 
 
 import 'swiper/css';
@@ -20,8 +20,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Loading from '../utilities/loading'; // Ensure the path is correct
-import { FaRegIdBadge } from 'react-icons/fa';
-import { BiHeart, BiComment } from 'react-icons/bi';
+// import { FaRegIdBadge } from 'react-icons/fa';
+// import { BiHeart, BiComment } from 'react-icons/bi';
 import image1 from '../images/img1.webp';
 import image2 from '../images/img2.webp';
 import image3 from '../images/img3.webp';
@@ -32,7 +32,7 @@ import image7 from '../images/1720735025419.png';
 import image8 from '../images/1720735025429.png';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Image } from 'react-bootstrap';
+// import { Image } from 'react-bootstrap';
 import SiteFeatures from './features';
 
 const images = [
@@ -45,7 +45,6 @@ const images = [
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const scroll = window.scrollY;
 
 
 
@@ -118,27 +117,33 @@ const HomePage = () => {
         </motion.div>
       </motion.div>
 
-      <div className="flex flex-col gap-4 justify-center items-center min-h-screen w-screen bg-gradient-to-r from-blue-100 via-purple-200 to-pink-200 relative" style={{ backgroundAttachment: 'fixed' }}>
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-40" style={{ backgroundAttachment: 'fixed' }}></div>
-        {SiteFeatures.map(item => (
-          <item.Component key={item.id} />
-        ))}
-      </div>
+      <div className="relative flex flex-col gap-4 justify-center items-center min-h-screen w-screen bg-gradient-to-r from-blue-100 via-purple-200 to-fuchsia-100 overflow-y-auto py-5">
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-40"></div>
+  
+  <div className="relative z-10 text-center my-10 px-4 sm:px-6 lg:px-8 bg-">
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-maroon-700 mb-4">
+    Find Your <span className="text-pink-500">Perfect Match</span> in the Maheshwari Community with <span className="text-emerald-600">AI Power</span>
+  </h2>
+  <h3 className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6">
+    Seamlessly blending tradition with technology to bring you the most compatible match.
+  </h3>
+</div>
+
+  
+  {SiteFeatures.map(item => (
+    <item.Component key={item.id} />
+  ))}
+</div>
 
 
-      <motion.div
+
+      {/* <motion.div
         className="flex flex-col items-center p-6 my-10 bg-gray-100"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-extrabold text-maroon-700 mb-4">
-            Find Your <span className="text-pink-500"> Perfect Match</span> in the Maheshwari Community with <span className='text-emerald-600'>AI Power</span>
-          </h2>
-          <h2 className='text-xl text-gray-600 mb-8'> Seamlessly blending tradition with technology to bring you the most compatible match.</h2>
-        </div>
 
 
         <div className="grid gap-8 mb-8 md:grid-cols-3">
@@ -165,7 +170,7 @@ const HomePage = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </motion.div> */}
 
 
 
@@ -238,7 +243,7 @@ const HomePage = () => {
           </h1>
           <hr className="w-24 border-b-4 border-gray-800 mb-4 z-10" />
         </div>
-        <div className="relative flex flex-col lg:flex-row items-center justify-center lg:space-x-8 z-10">
+        <div className="relative flex flex-col lg:flex-row items-center justify-between lg:space-x-8 z-10">
           <div className="flex-shrink-0 mb-8 lg:mb-0 lg:w-1/2">
             <img
               src={DownloadImage}
@@ -251,7 +256,7 @@ const HomePage = () => {
               href="https://play.google.com/store"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center border border-gray-300 rounded-lg p-6 hover:shadow-xl transition-shadow bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300"
+              className="flex flex-col items-center border border-gray-300 rounded-lg p-6 hover:shadow-xl transition-shadow bg-gradient-to-r from-green-200 to-green-300 hover:from-green-200 hover:to-green-400"
             >
               <img
                 src={Androidlogo}
@@ -262,7 +267,7 @@ const HomePage = () => {
                 Download for Android
               </span>
             </a>
-            <a
+            {/* <a
               href="https://www.apple.com/app-store/"
               target="_blank"
               rel="noopener noreferrer"
@@ -276,7 +281,7 @@ const HomePage = () => {
               <span className="text-lg font-semibold text-gray-800">
                 Download for iOS
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
       </motion.div>

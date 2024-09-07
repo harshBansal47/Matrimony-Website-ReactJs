@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../utilities/loading';
+import emailjs from 'emailjs-com'; // Import EmailJS
 // import { sendEmail } from '../utilities/email'; // Import the sendEmail function
 
 interface FormData {
@@ -55,25 +56,25 @@ export default function ContactUs() {
             setLoading(true); // Show loading animation
 
             try {
-                const emailPayload = {
-                    sender: {
-                        name: formData.name,
-                        address: formData.email, // Adjust as needed based on nodemailer requirements
-                    },
-                    recipient: [
-                        {
-                            name: "Mohit Maheshwari",
-                            address: "bhutramohit@gmail.com",
-                        },
-                    ],
-                    subject: "New Application Submission",
-                    message: `
-                        Name: ${formData.name}\n
-                        Email: ${formData.email}\n
-                        Mobile: ${formData.mobile}\n
-                        Biodata: ${formData.biodata ? formData.biodata.name : "No biodata provided."}
-                    `,
-                };
+                // const emailPayload = {
+                //     sender: {
+                //         name: formData.name,
+                //         address: formData.email, // Adjust as needed based on nodemailer requirements
+                //     },
+                //     recipient: [
+                //         {
+                //             name: "Mohit Maheshwari",
+                //             address: "bhutramohit@gmail.com",
+                //         },
+                //     ],
+                //     subject: "New Application Submission",
+                //     message: `
+                //         Name: ${formData.name}\n
+                //         Email: ${formData.email}\n
+                //         Mobile: ${formData.mobile}\n
+                //         Biodata: ${formData.biodata ? formData.biodata.name : "No biodata provided."}
+                //     `,
+                // };
                 
                 const apiPayload = {
                     name: formData.name,
@@ -81,32 +82,23 @@ export default function ContactUs() {
                     mobile: formData.mobile,
                     biodata: formData.biodata ? formData.biodata.name : "No biodata provided"
                 };
+                const api_url = process.env.SEND_EMAIL_URL || "http://localhost:3000/sendemail";
 
-                 // Submit form data to the API
-                const apiResponse = await fetch('/api/submit-form', {
-                    method: 'POST',
+                const response = await fetch(api_url, {
+                    method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(apiPayload),
+                    body: JSON.stringify(apiPayload), // Convert apiPayload to JSON string
                 });
-
-                if (!apiResponse.ok) {
-                    throw new Error('Failed to submit form data');
+    
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
                 }
-
-                // // Send email using the sendEmail function
-                // const emailResponse = await sendEmail({
-                //     sender: emailPayload.sender,
-                //     recipient: emailPayload.recipient,
-                //     subject: emailPayload.subject,
-                //     message: emailPayload.message,
-                // });
-
-                // Handle successful email sending
-                // console.log('Email sent:', emailResponse);
-                setIsSubmitted(true);
+                if(response.ok){
+                    setIsSubmitted(true);
                 toast.success("Form submitted successfully!");
+                }   
 
             } catch (error) {
                 console.error('Error submitting form', error);

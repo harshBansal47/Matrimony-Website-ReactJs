@@ -24,7 +24,7 @@ export default function Navbar() {
             <li><Link to="/" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Home</Link></li>
             <li><Link to="/about" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">About</Link></li>
             <li><Link to="/contact" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Contact</Link></li>
-            <li><Link to="/blogs" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Blogs</Link></li>
+            {/* <li><Link to="/blogs" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Blogs</Link></li> */}
           </ul>
           {expand ? (
             <GiTireIronCross

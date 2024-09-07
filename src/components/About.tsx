@@ -104,10 +104,46 @@ const AboutUs: React.FC = () => {
         animate={ourStoryAnimation}
         className="bg-purple-800 w-11/12 md:w-10/12 lg:w-8/12 mx-auto bg-opacity-20 rounded-lg p-6 mb-8"
       >
-        <h2 className="text-3xl font-bold text-gray-600">Our Story</h2>
+        {/* <h2 className="text-3xl font-bold text-gray-600">Our Story</h2>
         <p className="text-lg text-gray-600 leading-relaxed">
           MisscoLpp was founded with a vision to revolutionize the matrimonial experience for the Maheshwari community. Recognizing the unique needs and values of our community, we set out to create a platform that blends the best of tradition and technology. Our team of dedicated professionals has worked tirelessly to develop an app that not only meets but exceeds your expectations.
+        </p> */}
+
+<section className="py-16 bg-gradient-to-r from-fuchsia-800 to-purple-800 text-white px-10">
+      <div className="container mx-auto text-center">
+        <h2 className="text-5xl font-bold mb-8">How We Work</h2>
+        <p className="text-lg mb-12 max-w-3xl mx-auto">
+          Powered by cutting-edge AI and astrological insights, we seamlessly connect you to your perfect match based on your biodata, preferences, and personality.
         </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+            <h3 className="text-2xl font-semibold mb-4">Step 1: Register & Provide Info</h3>
+            <p className="text-base">Enter your personal details, including professional info, hobbies, and preferences, to get started.</p>
+          </div>
+
+          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+            <h3 className="text-2xl font-semibold mb-4">Step 2: AI Astrological Data Extraction</h3>
+            <p className="text-base">Our system intelligently extracts astrological data using your birth details, initiating the matching process.</p>
+          </div>
+
+          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+            <h3 className="text-2xl font-semibold mb-4">Step 3: Gunn Matching</h3>
+            <p className="text-base">We perform Gunn matching based on astrological compatibility to shortlist potential partners.</p>
+          </div>
+
+          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+            <h3 className="text-2xl font-semibold mb-4">Step 4: AI Preference Matching</h3>
+            <p className="text-base">Our AI analyzes personal preferences like hobbies, age, and location to identify compatible matches.</p>
+          </div>
+
+          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+            <h3 className="text-2xl font-semibold mb-4">Step 5: Final Match Suggestions</h3>
+            <p className="text-base">Receive AI-powered match suggestions, combining astrological data and your personal preferences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
       </motion.div>
 
       <motion.div
