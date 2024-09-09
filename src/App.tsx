@@ -11,6 +11,7 @@ import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import BlogPost from './components/BlogPost'; // Import the new BlogPost component
 import HelpAndSupport from './components/HelpandSupport';
+import TermsAndConditions from './components/TermsAndConditions';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path:"/helpAndSupport",
         element:<HelpAndSupport/>
+      },
+      {
+        path:'/termsandconditions',
+        element:<TermsAndConditions/>
       }
     ],
   },

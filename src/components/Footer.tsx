@@ -54,7 +54,7 @@ export default function Footer() {
           <h1 className="font-bold mb-3 text-lg text-pink-500">Legal</h1>
           <hr className="my-1 border-gray-600 w-8/12 mx-auto" />
           <ul>
-            <li className="mb-2"><a href="/terms/termsandconditions" className="text-sm text-gray-400 hover:text-pink-500">Terms & Conditions</a></li>
+            <li className="mb-2"><a href="/termsandconditions" className="text-sm text-gray-400 hover:text-pink-500">Terms & Conditions</a></li>
             <li className="mb-2"><a href="/terms/privacy" className="text-sm text-gray-400 hover:text-pink-500">Privacy Policy</a></li>
             <li className="mb-2"><a href="/terms/termofuse" className="text-sm text-gray-400 hover:text-pink-500">Terms of Use</a></li>
             <li className="mb-2"><a href="/helpAndSupport" className="text-sm text-gray-400 hover:text-pink-500">FAQ's</a></li>

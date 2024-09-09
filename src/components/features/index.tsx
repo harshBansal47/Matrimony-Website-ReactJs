@@ -58,13 +58,15 @@ const Comp1 = () => (
         <li>Customizable preferences</li>
       </ul>
     </motion.div>
-    <motion.div className="relative w-full lg:w-1/2 flex justify-center lg:justify-evenly" variants={animationVariants}>
-      <img
-        src={AiMatches}
-        alt="AI Matching"
-        className="w-full h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
-      />
-    </motion.div>
+    <motion.div className="relative lg:w-1/2 flex justify-center lg:justify-evenly" variants={animationVariants}>
+  <img
+    src={AiMatches}
+    alt="AI Matching"
+    className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+    style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
+  />
+</motion.div>
+
   </motion.div>
 );
 
@@ -108,11 +110,12 @@ const Comp2 = () => (
         <li>Get Rid of Manual Matching</li>
       </ul>
     </div>
-    <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-evenly">
+    <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
       <img
         src={Astro}
         alt="Astrology Integration"
-        className="w-full h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
       />
     </div>
   </motion.div>
@@ -155,11 +158,12 @@ const Comp3 = () => (
         <li>Exclusive network of profiles</li>
       </ul>
     </div>
-    <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-evenly">
+    <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
       <img
         src={AiMatches}
         alt="Exclusive to Maheshwari Community"
-        className="w-full h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+    style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
       />
     </div>
   </motion.div>
@@ -202,11 +206,12 @@ const Comp4 = () => (
         <li>Tailor matches to your preferences</li>
       </ul>
     </div>
-    <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-evenly">
+    <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
       <img
         src={PersonalizedPreferences}
         alt="Personalized Preferences"
-        className="w-full h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
       />
     </div>
   </motion.div>
@@ -249,11 +254,12 @@ const Comp5 = () => (
         <li>Quick, guided match suggestions</li>
       </ul>
     </div>
-    <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-evenly">
+    <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
       <img
         src={Seamless}
         alt="Seamless User Experience"
-        className="w-full h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
+        style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
       />
     </div>
   </motion.div>
