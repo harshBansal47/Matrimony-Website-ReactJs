@@ -4,6 +4,7 @@ import AiMatches from '../../images/screenshots/ai-matches.jpeg';
 import PersonalizedPreferences from '../../images/screenshots/v.jpeg';
 import Astro from '../../images/screenshots/astro.jpeg';
 import Seamless from '../../images/screenshots/seamless.jpeg';
+import Cp from '../../images/screenshots/cp.jpeg';
 
 // Define animation variants
 const animationVariants = {
@@ -60,7 +61,7 @@ const Comp1 = () => (
     </motion.div>
     <motion.div className="relative lg:w-1/2 flex justify-center lg:justify-evenly" variants={animationVariants}>
   <img
-    src={AiMatches}
+    src={Cp}
     alt="AI Matching"
     className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
     style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
@@ -89,7 +90,7 @@ const Comp2 = () => (
     <div className="absolute inset-0 bg-texture bg-no-repeat bg-cover opacity-20"></div>
     <div className="relative z-10 w-full lg:w-1/2 text-left p-6">
       <motion.h1
-        className="text-2xl lg:text-4xl font-bold text-gray-900 mb-4 flex items-center"
+        className="text-xl lg:text-4xl font-bold text-gray-900 mb-4 flex items-center"
         variants={iconVariants}
         initial="hidden"
         animate="visible"
@@ -112,7 +113,7 @@ const Comp2 = () => (
     </div>
     <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
       <img
-        src={Astro}
+        src={PersonalizedPreferences}
         alt="Astrology Integration"
         className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
         style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
@@ -208,7 +209,7 @@ const Comp4 = () => (
     </div>
     <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
       <img
-        src={PersonalizedPreferences}
+        src={Astro}
         alt="Personalized Preferences"
         className="w-3/4 h-auto max-w-xs lg:max-w-lg rounded-lg shadow-lg z-20 overflow-hidden"
         style={{ maxHeight: '500px' }} // Adjust this value based on your requirements
