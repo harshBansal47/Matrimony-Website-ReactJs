@@ -82,8 +82,8 @@ const AboutUs: React.FC = () => {
     bannerAnimation, ourStoryAnimation, whyUsAnimation, teamAnimation, valuesAnimation,
     missionAnimation, visionAnimation, joinUsAnimation,
   ]);
-  
-  
+
+
 
   return (
     <>
@@ -109,41 +109,81 @@ const AboutUs: React.FC = () => {
           MisscoLpp was founded with a vision to revolutionize the matrimonial experience for the Maheshwari community. Recognizing the unique needs and values of our community, we set out to create a platform that blends the best of tradition and technology. Our team of dedicated professionals has worked tirelessly to develop an app that not only meets but exceeds your expectations.
         </p> */}
 
-<section className="py-16 bg-gradient-to-r from-fuchsia-800 to-purple-800 text-white px-10">
-      <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-8">How We Work</h2>
-        <p className="text-lg mb-12 max-w-3xl mx-auto">
-          Powered by cutting-edge AI and astrological insights, we seamlessly connect you to your perfect match based on your biodata, preferences, and personality.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-            <h3 className="text-2xl font-semibold mb-4">Step 1: Register & Provide Info</h3>
-            <p className="text-base">Enter your personal details, including professional info, hobbies, and preferences, to get started.</p>
-          </div>
+        <section className="py-16 bg-gradient-to-r from-fuchsia-800 to-purple-800 text-white px-6 md:px-10">
+          <div className="container mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-8">How We Work</h2>
+            <p className="text-lg mb-12 max-w-3xl mx-auto">
+              At Smart Maheshwari Matrimony, we aim to make finding your perfect match a seamless, personalized, and secure experience.
+            </p>
 
-          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-            <h3 className="text-2xl font-semibold mb-4">Step 2:Automatic Data extraction from biodata</h3>
-            <p className="text-base">Our system intelligently extracts astrological data using your birth details, initiating the matching process.</p>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Step 1 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 1: Easy Registration</h3>
+                <p className="text-base">
+                  Sign up with essential details such as name, age, profession, and preferences. Our process is quick and user-friendly.
+                </p>
+              </div>
 
-          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-            <h3 className="text-2xl font-semibold mb-4">Step 3: Gunn Matching</h3>
-            <p className="text-base">We perform Gunn matching based on astrological compatibility to shortlist potential partners.</p>
-          </div>
+              {/* Step 2 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 2: Personalized Profiles</h3>
+                <p className="text-base">
+                  Complete your profile with detailed information like background, interests, and family details to suggest compatible matches.
+                </p>
+              </div>
 
-          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-            <h3 className="text-2xl font-semibold mb-4">Step 4: AI Preference Matching</h3>
-            <p className="text-base">Our AI analyzes personal preferences like hobbies, age, and location to identify compatible matches.</p>
-          </div>
+              {/* Step 3 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 3: Add Your Partner Preferences</h3>
+                <p className="text-base">
+                  Specify your ideal partner by selecting criteria such as age, education, profession, and family background.
+                </p>
+              </div>
 
-          <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-            <h3 className="text-2xl font-semibold mb-4">Step 5: Final Match Suggestions</h3>
-            <p className="text-base">Receive AI-powered match suggestions, combining astrological data and your personal preferences.</p>
+              {/* Step 4 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 4: Upload Your Biodata</h3>
+                <p className="text-base">
+                  Upload your biodata with comprehensive details about your family, profession, and education for better matches.
+                </p>
+              </div>
+
+              {/* Step 5 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 5: Smart Matchmaking Algorithm</h3>
+                <p className="text-base">
+                  Our advanced algorithm matches you with profiles based on education, profession, family background, and personal interests.
+                </p>
+              </div>
+
+              {/* Step 6 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 6: Wait for Matches to be Sent</h3>
+                <p className="text-base">
+                  Once complete, sit back as we send you curated matches that align with your preferences.
+                </p>
+              </div>
+
+              {/* Step 7 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 7: Secure & Private Communication</h3>
+                <p className="text-base">
+                  Communicate securely through our platform without sharing personal details until you feel comfortable.
+                </p>
+              </div>
+
+              {/* Step 8 */}
+              <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold mb-4">Step 8: Find Your Perfect Match</h3>
+                <p className="text-base">
+                  Build a connection confidently, knowing that our system has matched you based on your values and preferences.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+
       </motion.div>
 
       <motion.div
@@ -166,13 +206,12 @@ const AboutUs: React.FC = () => {
             <span>Why Us</span>
           </h1>
           <div className="flex flex-col md:flex-row justify-between mx-4 md:mx-10 my-10 space-y-5 md:space-y-0">
-            <div className="relative flex flex-col justify-between space-y-4 md:space-y-0 md:mr-10">
+            <div className="hidden relative md:flex md:flex-col justify-between space-y-4 md:space-y-0 md:mr-10">
               {points.map((point, index) => (
                 <div
                   key={index}
-                  className={`p-4 bg-white rounded-lg shadow-lg cursor-pointer transition-transform transform ${
-                    hoveredPoint === index ? 'scale-105 bg-blue-100' : 'bg-white'
-                  } hover:shadow-xl`}
+                  className={`p-4 bg-white rounded-lg shadow-lg cursor-pointer transition-transform transform ${hoveredPoint === index ? 'scale-105 bg-blue-100' : 'bg-white'
+                    } hover:shadow-xl`}
                   onMouseEnter={() => setHoveredPoint(index)}
                   onClick={() => setHoveredPoint(index)}
                   onMouseLeave={() => setHoveredPoint(0)}
@@ -186,9 +225,8 @@ const AboutUs: React.FC = () => {
               {points.map((point, index) => (
                 <li
                   key={index}
-                  className={`flex items-start space-x-3 transition-opacity ${
-                    hoveredPoint === index ? 'opacity-100' : 'opacity-70'
-                  } md:${hoveredPoint === index ? 'block' : 'hidden'} block md:flex`}
+                  className={`flex items-start space-x-3 transition-opacity ${hoveredPoint === index ? 'opacity-100' : 'opacity-70'
+                    } md:${hoveredPoint === index ? 'block' : 'hidden'} block md:flex`}
                 >
                   <span className="text-blue-500 font-semibold">•</span>
                   <span>

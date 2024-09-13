@@ -12,6 +12,7 @@ interface FormData {
     biodata: File | null;
 }
 
+
 interface FormErrors {
     name?: string;
     email?: string;
