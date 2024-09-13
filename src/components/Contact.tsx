@@ -52,55 +52,45 @@ export default function ContactUs() {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+    
         if (validateForm()) {
             setLoading(true); // Show loading animation
-
+    
             try {
-                // const emailPayload = {
-                //     sender: {
-                //         name: formData.name,
-                //         address: formData.email, // Adjust as needed based on nodemailer requirements
-                //     },
-                //     recipient: [
-                //         {
-                //             name: "Mohit Maheshwari",
-                //             address: "bhutramohit@gmail.com",
-                //         },
-                //     ],
-                //     subject: "New Application Submission",
-                //     message: `
-                //         Name: ${formData.name}\n
-                //         Email: ${formData.email}\n
-                //         Mobile: ${formData.mobile}\n
-                //         Biodata: ${formData.biodata ? formData.biodata.name : "No biodata provided."}
-                //     `,
-                // };
+                // Create a FormData object to hold the form data
+                const formDataToSend = new FormData();
+                formDataToSend.append('name', formData.name);
+                formDataToSend.append('email', formData.email);
+                formDataToSend.append('mobile', formData.mobile);
                 
-                const apiPayload = {
-                    name: formData.name,
-                    email: formData.email,
-                    mobile: formData.mobile,
-                    biodata: formData.biodata ? formData.biodata.name : "No biodata provided"
-                };
-                const api_url = process.env.SEND_EMAIL_URL || "http://localhost:3000/sendemail";
+                if (formData.biodata) {
+                    formDataToSend.append('biodata', formData.biodata); // Append the file if it exists
+                }
+    
+                const api_url = process.env.SEND_EMAIL_URL || "https://complaint.smartmaheshwari.com/sendEmail";
+                const token = process.env.TOKEN || "maheshwari"; // Replace "default-token" with a suitable default
 
-                const response = await fetch(api_url, {
+                console.log(process.env.SEND_EMAIL_URL)
+    
+                // Type assertion to tell TypeScript that api_url is a string
+                const response = await fetch(api_url as string, {
                     method: "POST",
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Authorization': `maheshwari`, // Add the token here
                     },
-                    body: JSON.stringify(apiPayload), // Convert apiPayload to JSON string
+                    body: formDataToSend, // Send the FormData object directly
                 });
+    
     
                 if (!response.ok) {
                     throw new Error('Network response was not ok.');
                 }
-                if(response.ok){
+    
+                if(response.ok) {
                     setIsSubmitted(true);
-                toast.success("Form submitted successfully!");
-                }   
-
+                    toast.success("Form submitted successfully!");
+                }
+    
             } catch (error) {
                 console.error('Error submitting form', error);
                 setErrors({ biodata: 'Error submitting form' });
@@ -110,6 +100,7 @@ export default function ContactUs() {
             }
         }
     };
+    
 
     return (
         <>
