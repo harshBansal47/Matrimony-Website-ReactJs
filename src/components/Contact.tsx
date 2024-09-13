@@ -3,7 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../utilities/loading';
 import emailjs from 'emailjs-com'; // Import EmailJS
-// import { sendEmail } from '../utilities/email'; // Import the sendEmail function
 
 interface FormData {
     name: string;
@@ -11,7 +10,6 @@ interface FormData {
     mobile: string;
     biodata: File | null;
 }
-
 
 interface FormErrors {
     name?: string;
@@ -28,6 +26,106 @@ export default function ContactUs() {
         mobile: '',
         biodata: null,
     });
+
+    const htmlcontent = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>New User Added</title>
+            <style>
+                /* Reset */
+                body, p, h1, h2, h3 {
+                    margin: 0;
+                    padding: 0;
+                    font-family: Arial, sans-serif;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+                table {
+                    border-collapse: collapse;
+                }
+                /* Main Styles */
+                .email-wrapper {
+                    width: 100%;
+                    background-color: #f4f4f4;
+                    padding: 20px 0;
+                }
+                .email-content {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                .header {
+                    background-color: #007bff;
+                    color: #ffffff;
+                    padding: 20px;
+                    text-align: center;
+                }
+                .header h1 {
+                    font-size: 24px;
+                }
+                .body {
+                    padding: 20px;
+                }
+                .body h2 {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                .body p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+                .footer {
+                    background-color: #f1f1f1;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #555555;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="email-wrapper">
+                <div class="email-content">
+                    <div class="header">
+                        <h1>Smart Maheshwari Matrimonials</h1>
+                    </div>
+                    <div class="body">
+                        <h2>New User Added</h2>
+                        <p>
+                            A new user has been added to the system. Here are the details:
+                        </p>
+                        <p>
+                            <strong>Name:</strong> ${formData.name}<br>
+                            <strong>Email:</strong> ${formData.email}<br>
+                            <strong>Mobile Number:</strong> ${formData.mobile}
+                        </p>
+                        <p>
+                            Please find the attached PDF with the biodata of the new user.
+                        </p>
+                        <p>
+                            If you have any questions, feel free to reply to this email or contact us at support@smartmaheshwarimatrimonials.com.
+                        </p>
+                        <p>
+                            Best regards,<br>
+                            The Smart Maheshwari Matrimonials Team
+                        </p>
+                    </div>
+                    <div class="footer">
+                        ©Smart Maheshwari Matrimonials. All rights reserved.<br>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
 
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -52,45 +150,39 @@ export default function ContactUs() {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    
+
         if (validateForm()) {
             setLoading(true); // Show loading animation
-    
+
             try {
                 // Create a FormData object to hold the form data
                 const formDataToSend = new FormData();
-                formDataToSend.append('name', formData.name);
-                formDataToSend.append('email', formData.email);
-                formDataToSend.append('mobile', formData.mobile);
-                
+                formDataToSend.append('text', htmlcontent);
+                formDataToSend.append('subject', "New User Registered");
+
                 if (formData.biodata) {
-                    formDataToSend.append('biodata', formData.biodata); // Append the file if it exists
+                    formDataToSend.append('attachment', formData.biodata); // Append the file if it exists
                 }
-    
+
                 const api_url = process.env.SEND_EMAIL_URL || "https://complaint.smartmaheshwari.com/sendEmail";
                 const token = process.env.TOKEN || "maheshwari"; // Replace "default-token" with a suitable default
 
-                console.log(process.env.SEND_EMAIL_URL)
-    
                 // Type assertion to tell TypeScript that api_url is a string
                 const response = await fetch(api_url as string, {
                     method: "POST",
                     headers: {
-                        'Authorization': `maheshwari`, // Add the token here
+                        'Authorization': `${token}`, // Add the token here
                     },
                     body: formDataToSend, // Send the FormData object directly
                 });
-    
-    
+
                 if (!response.ok) {
                     throw new Error('Network response was not ok.');
                 }
-    
-                if(response.ok) {
-                    setIsSubmitted(true);
-                    toast.success("Form submitted successfully!");
-                }
-    
+
+                setIsSubmitted(true);
+                toast.success("Form submitted successfully!");
+
             } catch (error) {
                 console.error('Error submitting form', error);
                 setErrors({ biodata: 'Error submitting form' });
@@ -100,7 +192,6 @@ export default function ContactUs() {
             }
         }
     };
-    
 
     return (
         <>
