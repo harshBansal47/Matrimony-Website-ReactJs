@@ -123,7 +123,7 @@ const AboutUs: React.FC = () => {
           </div>
 
           <div className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
-            <h3 className="text-2xl font-semibold mb-4">Step 2: AI Astrological Data Extraction</h3>
+            <h3 className="text-2xl font-semibold mb-4">Step 2:Automatic Data extraction from biodata</h3>
             <p className="text-base">Our system intelligently extracts astrological data using your birth details, initiating the matching process.</p>
           </div>
 

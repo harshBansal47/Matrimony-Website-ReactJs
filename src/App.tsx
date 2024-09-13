@@ -12,6 +12,8 @@ import ErrorPage from './components/ErrorPage';
 import BlogPost from './components/BlogPost'; // Import the new BlogPost component
 import HelpAndSupport from './components/HelpandSupport';
 import TermsAndConditions from './components/TermsAndConditions';
+import TermsOfUse from './components/TermOfUse';
+import PrivacyPolicy from './components/Privacy';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
       {
         path:'/termsandconditions',
         element:<TermsAndConditions/>
+      },
+      {
+        path:'/terms/termofuse',
+        element:<TermsOfUse/>
+      },
+      {
+        path:'/terms/privacy',
+        element:<PrivacyPolicy/>
       }
     ],
   },
