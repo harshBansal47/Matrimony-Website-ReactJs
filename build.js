@@ -4,7 +4,7 @@ const path = require('path');
 
 // Define the source (build folder) and destination directories
 const source = path.join(__dirname, 'build'); // Default build directory
-const destination = path.join(__dirname, 'dist'); // Change 'dist' to your desired directory
+const destination = path.join('/home/maheshwari/public_html'); // Change 'dist' to your desired directory
 
 // Copy function to move files from source to destination
 fs.copy(source, destination, { overwrite: true }, (err) => {
