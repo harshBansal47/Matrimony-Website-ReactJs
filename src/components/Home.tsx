@@ -117,24 +117,24 @@ const HomePage = () => {
         </motion.div>
       </motion.div>
 
-      <div className="relative flex flex-col gap-4 justify-center items-center min-h-screen w-screen bg-gradient-to-r from-blue-100 via-purple-200 to-fuchsia-100 overflow-y-auto py-5">
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-40"></div>
-  
-  <div className="relative z-10 text-center my-10 px-4 sm:px-6 lg:px-8 bg-">
-  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-maroon-700 mb-4">
-    Find Your <span className="text-pink-500">Perfect Match</span> in the Maheshwari Community with <span className="text-emerald-600">AI Power</span>
-  </h2>
-  <h3 className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6">
-    Seamlessly blending tradition with technology to bring you the most compatible match.
-  </h3>
-</div>
+      <div className="relative flex flex-col gap-4 justify-center items-center min-h-screen w-screen bg-gradient-to-r  overflow-y-auto py-5 bg-repeat-round" style={{backgroundImage:`url(${require('../images/wave_image.avif')})`}}>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0  opacity-80" style={{backgroundImage:`url(${require('../images/gradient.png')})`}}></div>
 
-  
-  {SiteFeatures.map(item => (
-    <item.Component key={item.id} />
-  ))}
-</div>
+        <div className="relative z-10 text-center my-10 px-4 sm:px-6 lg:px-8 bg-">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-maroon-700 mb-4">
+            Find Your <span className="text-pink-500">Perfect Match</span> in the Maheshwari Community with <span className="text-emerald-600">AI Power</span>
+          </h2>
+          <h3 className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6">
+            Seamlessly blending tradition with technology to bring you the most compatible match.
+          </h3>
+        </div>
+
+
+        {SiteFeatures.map(item => (
+          <item.Component key={item.id} />
+        ))}
+      </div>
 
 
 

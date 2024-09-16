@@ -24,7 +24,6 @@ const animationVariants = {
 const iconVariants = {
   hidden: { rotate: 0 },
   visible: {
-    rotate: 360,
     transition: { duration: 0.8, ease: "easeInOut" },
   },
 };

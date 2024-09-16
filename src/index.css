@@ -128,13 +128,14 @@ body::before{
 
 
 .gradient-text {
-  background: linear-gradient(90deg, #fe8f77, #f9d17c, #9efa73, #75f28c, #33FFBD, #88aaf3, #5733FF, #BD33FF, #FF33BD, #FF3375);
+  background: linear-gradient(90deg, #a8c0ff, #fbc2eb, #fde2e4, #ffdde1, #c6ffdd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   animation: gradient-animation 5s infinite;
 }
+
 
 @keyframes gradient-animation {
   0% { background-position: 0% 50%; }
