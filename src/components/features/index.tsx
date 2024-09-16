@@ -102,10 +102,10 @@ const Comp2 = () => (
         Astrology Integration
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        Automatic Astrology Information Matching for personalized astrological insights.
+        Our App automatic extract astrology data for you.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Accurate astrological predictions</li>
+        <li>Accurate astrological Matching</li>
         <li>AI-based Astrology Gunn Matching</li>
         <li>Get Rid of Manual Matching</li>
       </ul>
@@ -151,10 +151,10 @@ const Comp3 = () => (
         Exclusive to Maheshwari Community
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        Find your ideal match within a niche, like-minded Maheshwari group.
+        The app is only made for maheshwari community.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Focused on community values</li>
+        <li>Preserve your privacy</li>
         <li>Exclusive network of profiles</li>
       </ul>
     </div>
@@ -199,10 +199,10 @@ const Comp4 = () => (
         Personalized Preferences
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        Customize your match preferences based on hobbies, interests, and more.
+        We find the best pair automatically based on Preferences.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Filter by lifestyle choices</li>
+        <li>Automatic Biodata Reading and find your Intrests</li>
         <li>Tailor matches to your preferences</li>
       </ul>
     </div>
