@@ -43,19 +43,19 @@ const Comp1 = () => (
   >
     <div className="absolute inset-0 bg-texture bg-no-repeat bg-cover opacity-20"></div>
     <motion.div className="relative z-10 w-full lg:w-1/2 text-left p-6" variants={animationVariants}>
-      <motion.h1 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-4 flex items-center" variants={iconVariants}>
+      <motion.h1 className="text-2xl lg:text-2xl font-bold text-gray-900 mb-4 flex items-center" variants={iconVariants}>
         <span className="mr-3">
           <svg className="w-6 h-6 lg:w-8 lg:h-8 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
           </svg>
         </span>
-        Automatic AI-Powered Matching
+        Ai Based Matching 
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        Matches optimized for compatibility with the power of artificial intelligence, bringing you closer to your ideal partner.
+        Matching algorithms that works to find best suits for you
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Customizable preferences</li>
+        <li>Your preferences will be matched to find best match for you</li>
       </ul>
     </motion.div>
     <motion.div className="relative lg:w-1/2 flex justify-center lg:justify-evenly" variants={animationVariants}>

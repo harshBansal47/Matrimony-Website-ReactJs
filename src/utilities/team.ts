@@ -2,7 +2,7 @@ import carryImage from '../images/team/carry.jpeg';
 import founderImage from '../images/team/founder.jpeg';
 import rahulImage from '../images/team/rahul.jpeg';
 import cmoImage from '../images/team/cmo.jpeg';
-import cofounderImage from '../images/team/cofounder.jpeg';
+import cofounderImage from '../images/team/cofounder.png';
 // import marketerImage from '../images/team/marketting.jpeg';
 // import dheerajImage from '../images/team/dheeraj.jpeg';
 import harshImage from '../images/team/harsh.jpg';

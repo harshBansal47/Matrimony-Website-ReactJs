@@ -253,9 +253,10 @@ const AboutUs: React.FC = () => {
               key={index}
               className="w-60 h-64 m-4 relative overflow-hidden border border-gray-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 bg-gradient-to-r from-blue-500 to-purple-500 p-1 group"
             >
-              <div className="w-full h-2/3 bg-gray-600">
-                <Image src={member.imageUrl} alt={member.name} className="w-full h-full object-cover rounded-t-lg" />
-              </div>
+              <div className="w-full h-2/3 bg-gray-600 flex items-center justify-center">
+    <Image src={member.imageUrl} alt={member.name} className="w-full h-full object-cover object-center rounded-t-lg" />
+</div>
+
               <div className="bg-gray-800 flex flex-col items-center rounded-b-lg p-2 relative">
                 <h2 className="text-md font-semibold text-white">{member.name}</h2>
                 <p className="text-white">{member.position}</p>
