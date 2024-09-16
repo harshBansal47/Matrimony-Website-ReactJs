@@ -105,7 +105,7 @@ const Comp2 = () => (
         Automatic Astrology Information Matching for personalized astrological insights.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Accurate astrological predictions</li>
+        <li>Astrology meets AI: Get personalized astrological insights</li>
         <li>AI-based Astrology Gunn Matching</li>
         <li>Get Rid of Manual Matching</li>
       </ul>
