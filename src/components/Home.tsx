@@ -82,10 +82,10 @@ const HomePage = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text shadow-lg">
-            Welcome to Smart Maheshwari Matrimonial App
+          Discover Your Ideal Match in the Maheshwari Community
           </h1>
           <p className="text-lg md:text-xl mb-4 gradient-text shadow-md">
-            Connecting hearts, building futures.
+          Bringing Tradition and Technology Together
           </p>
           <Link to="/contact">
             <button className="mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full text-lg font-semibold transition duration-300 shadow-lg">

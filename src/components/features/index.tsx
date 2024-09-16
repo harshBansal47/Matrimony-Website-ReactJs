@@ -151,11 +151,11 @@ const Comp3 = () => (
         Exclusive to Maheshwari Community
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        The app is only made for maheshwari community.
+      Join an exclusive platform built around the values of the Maheshwari community.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Preserve your privacy</li>
-        <li>Exclusive network of profiles</li>
+        <li>- Culturally Aligned Matches: Meet people who share your beliefs and traditions</li>
+        <li>- Niche Network: A focused space for meaningful and long-lasting connections.</li>
       </ul>
     </div>
     <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
@@ -196,14 +196,14 @@ const Comp4 = () => (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h18v18H3z" />
           </svg>
         </span>
-        Personalized Preferences
+        Personalize Your Matchmaking Experience
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        We find the best pair automatically based on Preferences.
+      Filter your matches with personalized preferences like interests, values, and lifestyle choices.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Automatic Biodata Reading and find your Intrests</li>
-        <li>Tailor matches to your preferences</li>
+        <li>- Lifestyle Filters: Find matches based on what's most important to you.</li>
+        <li>- Tailored Experience: Your matches, your way.</li>
       </ul>
     </div>
     <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
@@ -244,14 +244,15 @@ const Comp5 = () => (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </span>
-        Seamless User Experience
+        Enjoy a Seamless, Stress-Free Journey
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        Intuitive, easy-to-use interface with guided match suggestions for a smooth journey.
+      Our sleek, user-friendly interface ensures a smooth, guided experience from sign-up to perfect
+      match.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>User-friendly design</li>
-        <li>Quick, guided match suggestions</li>
+        <li>- Simple to Navigate: Find your match in just a few clicks.</li>
+        <li>- Smart Suggestions: Personalized match recommendations that make your journey easier.</li>
       </ul>
     </div>
     <div className="relative lg:w-1/2 flex justify-center lg:justify-evenly">
