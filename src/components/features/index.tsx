@@ -43,7 +43,7 @@ const Comp1 = () => (
   >
     <div className="absolute inset-0 bg-texture bg-no-repeat bg-cover opacity-20"></div>
     <motion.div className="relative z-10 w-full lg:w-1/2 text-left p-6" variants={animationVariants}>
-      <motion.h1 className="text-2xl lg:text-2xl font-bold text-gray-900 mb-4 flex items-center" variants={iconVariants}>
+      <motion.h1 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-4 flex items-center" variants={iconVariants}>
         <span className="mr-3">
           <svg className="w-6 h-6 lg:w-8 lg:h-8 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
