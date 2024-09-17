@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../utilities/loading';
+import axios from 'axios';
 import emailjs from 'emailjs-com'; // Import EmailJS
 
 interface FormData {
@@ -20,6 +21,7 @@ interface FormErrors {
 
 export default function ContactUs() {
     const [loading, setLoading] = useState<boolean>(false);
+    
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -164,19 +166,22 @@ export default function ContactUs() {
                     formDataToSend.append('attachment', formData.biodata); // Append the file if it exists
                 }
 
-                const api_url = process.env.SEND_EMAIL_URL || "https://complaint.smartmaheshwari.com/sendEmail";
+                 const api_url = process.env.SEND_EMAIL_URL || "https://complaint.smartmaheshwari.com/sendEmail";
                 const token = process.env.TOKEN || "maheshwari"; // Replace "default-token" with a suitable default
 
                 // Type assertion to tell TypeScript that api_url is a string
-                const response = await fetch(api_url as string, {
-                    method: "POST",
+                const response = await axios.post(api_url, formDataToSend, {
                     headers: {
+
+                        'Access-Control-Allow-Origin': '*',
+                       'Content-Type': 'multipart/form',
+                        
                         'Authorization': `${token}`, // Add the token here
                     },
-                    body: formDataToSend, // Send the FormData object directly
+                    //body: formDataToSend, // Send the FormData object directly
                 });
-
-                if (!response.ok) {
+               
+                if (!response.status) {
                     throw new Error('Network response was not ok.');
                 }
 
