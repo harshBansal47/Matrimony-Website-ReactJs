@@ -102,10 +102,10 @@ const Comp2 = () => (
         Astrology Integration
       </motion.h1>
       <p className="text-base lg:text-lg text-gray-700 mb-4">
-        Our App automatic extract astrology data for you.
+        Our App automatically extract astrology data for you.
       </p>
       <ul className="list-disc list-inside text-gray-700">
-        <li>Accurate astrological Matching</li>
+        <li>Astrology meets AI: Get personalized astrological insights</li>
         <li>AI-based Astrology Gunn Matching</li>
         <li>Get Rid of Manual Matching</li>
       </ul>
