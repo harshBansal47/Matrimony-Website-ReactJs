@@ -72,9 +72,12 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="https://smartmaheshwari.com/downloads/app.apk" className={`text-lg text-[#333333] hover:text-[#bf65ad] font-bold`} onClick={() => setExpand(false)}>
+            <a href="https://smartmaheshwari.com/downloads/app.apk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">
               Download App
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
