@@ -26,7 +26,7 @@ export default function Navbar() {
             <li><Link to="/contact" className="text-sm 1font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Contact</Link></li>
             {/* <li><a href="https://smartmaheshwari.com/downloads/app.apk" target="_blank" className="text-sm 1font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Download App</a></li> */}
             <li>
-              <a href="https://smartmaheshwari.com/downloads/app.apk"
+              <a href={process.env.SEND_EMAIL_URL || "https://smartmaheshwari.com/downloads/smartmaheshwari-matrimonial.apk"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">
@@ -72,7 +72,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="https://smartmaheshwari.com/downloads/app.apk"
+            <a href={process.env.SEND_EMAIL_URL || "https://smartmaheshwari.com/downloads/smartmaheshwari-matrimonial.apk"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">
