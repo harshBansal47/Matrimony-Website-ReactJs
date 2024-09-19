@@ -11,10 +11,10 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 w-full bg-red-50">
       <div className="py-1 px-10 lg:px-15 flex justify-between items-center">
         <div className="flex items-center justify-center h-16">
-          <Image 
-            src={Logo} 
-            alt="Maheshwari Matrimonials" 
-            aria-label="Maheshwari Matrimonials" 
+          <Image
+            src={Logo}
+            alt="Maheshwari Matrimonials"
+            aria-label="Maheshwari Matrimonials"
             className="h-16 w-auto"
           />
         </div>
@@ -24,7 +24,15 @@ export default function Navbar() {
             <li><Link to="/" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Home</Link></li>
             <li><Link to="/about" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">About</Link></li>
             <li><Link to="/contact" className="text-sm 1font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Contact</Link></li>
-            <li><Link to="https://smartmaheshwari.com/downloads/app.apk" className="text-sm 1font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Download App</Link></li>
+            {/* <li><a href="https://smartmaheshwari.com/downloads/app.apk" target="_blank" className="text-sm 1font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Download App</a></li> */}
+            <li>
+              <a href="https://smartmaheshwari.com/downloads/app.apk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">
+                Download App
+              </a>
+            </li>
             {/* <li><Link to="/blogs" className="text-sm font-bold text-[#615a5a] hover:text-[#bf65ad] open-sans-google">Blogs</Link></li> */}
           </ul>
           {expand ? (
