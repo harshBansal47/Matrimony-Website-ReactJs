@@ -107,7 +107,7 @@ export default function Footer() {
       >
         <p className="text-sm text-gray-400 mb-5 lg:mb-0">© 2024 All Rights Reserved</p>
         <div className="flex items-center justify-center gap-5">
-          <motion.a
+          {/* <motion.a
             href="https://www.twitter.com/"
             aria-label="Twitter"
             className="mx-2"
@@ -115,9 +115,9 @@ export default function Footer() {
             transition={{ duration: 0.3 }}
           >
             <FaTwitter size={30} className="text-pink-500 hover:text-pink-700 transition-all" />
-          </motion.a>
+          </motion.a> */}
           <motion.a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/company/miiscollp"
             aria-label="LinkedIn"
             className="mx-2"
             whileHover={{ scale: 1.1 }}
@@ -125,7 +125,7 @@ export default function Footer() {
           >
             <FaLinkedin size={30} className="text-pink-500 hover:text-pink-700 transition-all" />
           </motion.a>
-          <motion.a
+          {/* <motion.a
             href="https://www.instagram.com/"
             aria-label="Instagram"
             className="mx-2"
@@ -133,8 +133,8 @@ export default function Footer() {
             transition={{ duration: 0.3 }}
           >
             <FaInstagram size={30} className="text-pink-500 hover:text-pink-700 transition-all" />
-          </motion.a>
-          <motion.a
+          </motion.a> */}
+          {/* <motion.a
             href="https://www.facebook.com/"
             aria-label="Facebook"
             className="mx-2"
@@ -142,7 +142,7 @@ export default function Footer() {
             transition={{ duration: 0.3 }}
           >
             <FaFacebook size={30} className="text-pink-500 hover:text-pink-700 transition-all" />
-          </motion.a>
+          </motion.a> */}
         </div>
       </motion.div>
     </footer>

@@ -14,6 +14,7 @@ import HelpAndSupport from './components/HelpandSupport';
 import TermsAndConditions from './components/TermsAndConditions';
 import TermsOfUse from './components/TermOfUse';
 import PrivacyPolicy from './components/Privacy';
+import Career from './components/Carrer';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path:'/terms/privacy',
         element:<PrivacyPolicy/>
+      },
+      {
+        path:'/careers',
+        element:<Career/>
       }
     ],
   },
